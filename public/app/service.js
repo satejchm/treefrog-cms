@@ -37,32 +37,49 @@ var TREEFROG_SERVICE = (function() {
   };
 
   var _getModalContent = function() {
-    let modalContent = `<h1>Use this box to create navigation links.</h1>
-    <p>
+    let modalContent = `<div style="margin-top: 20px; margin: 15px; display: flex; flex-direction: column; align-items: center;"><h2>Use this box to create navigation links.</h2>
+    <p >
       You can create main navigation and sub navigation. To create sub-navigation you will need to first select a main nav and then create the sub-nav.
     </p>
-    <p>
+    <p style="margin-bottom: 10px;">
       Using the text box below enter the name of your main navigation.
     </p>
-    <input class="inputBox" type="text" name="navname" placeholder="products"><br>
-    <span class="btn btn-light">Create Main Nav</span><br><span class="btn btn-light cancel">Cancel</span>`;
+    <input style="padding: 5px;
+    width: 200px;
+    height: 30px;
+    font-size: 20px; border-radius: 5px; " class="inputBox" type="text" name="navname" placeholder="products"><br>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center;  justify-content: center;">
+    <span style="justify-content: center; margin-right: 30px;
+    background-color: #f2dcc9;
+    color: #393c40;"class="btn btn-light">Create Main Nav</span><br><span style=" margin-right: 30px;
+    background-color: #f2dcc9;
+    color: #393c40;" class="btn btn-light cancel">Cancel</span></div>`;
 
     return modalContent;
   };
 
   var _getModalContentSub = function() {
-    let modalContent = `<h1>Create Sub Navigation</h1>
+    let modalContent = `<div style="margin: 20px; display: flex; flex-direction: column; align-items: center;"><h2>Create Sub Navigation</h2>
     <p>In order to create a sub navigation you need to select a main nav.</p>
     <p>
       Select a main navigation
     </p>
-    <select style="width: 50px" id="list"><option value="Products"></option><option value="Other"></option><option value="Other two"></option></select>
-    <p>
+    <select style="width: 175px; font-size: 20px; height: 30px; margin-bottom: 15px; border-radius: 5px;" id="list"><option value="Products">Products</option><option value="Other">About</option><option value="Other">Contact</option></select>
+    <p style="margin-bottom: 20px;">
       Using the text box below enter the name of your sub navigation.
     </p>
-    <input class="inputBox" type="text" name="navname" placeholder="Bikes">
-    
-    <span class="btn btn-light">Create Sub Nav</span><span class="btn btn-light cancel">Cancel</span>`;
+    <input style="padding: 5px;
+    width: 200px;
+    height: 30px;
+    font-size: 20px; border-radius: 5px;" class="inputBox" type="text" name="navname" placeholder="Bikes">
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center;  justify-content: center;">
+    <span style="margin: 10px;
+    background-color: #f2dcc9;
+    color: #393c40;" class="btn btn-light">Create Sub Nav</span><span style="margin-right: 30px;
+    background-color: #f2dcc9;
+    color: #393c40;" class="btn btn-light cancel">Cancel</span></div>`;
 
     return modalContent;
   };

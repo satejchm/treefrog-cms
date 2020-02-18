@@ -10,10 +10,9 @@ function initButtons() {
     //when you click on create main nav it opens modal
     $(".main-nav").click(function(e) {
       $(".modal").css("display", "flex");
-      $(".modal").css("text-align", "center");
       $(".modal").css("color", "white");
       $(".alert-box").html(TREEFROG_SERVICE.getModalContent());
-      $(".cancel").addClass("btn btn-light");
+      //$(".cancel").addClass("btn btn-light");
       $(".cancel").click(function(e) {
         $(".modal").css("display", "none");
       });
@@ -22,7 +21,7 @@ function initButtons() {
     //when you click on create sub nav it opens a modal
     $(".sub-nav").click(function(e) {
       $(".modal").css("display", "flex");
-      $(".modal").css("text-align", "center");
+
       $(".modal").css("color", "white");
       $(".alert-box").html(TREEFROG_SERVICE.getModalContentSub());
       $(".cancel").click(function(e) {
