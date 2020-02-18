@@ -4,12 +4,18 @@
   padding: 20px 50px;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .btn-dark {
   background-color: #393c40;
   color: $white-color;
+}
+
+.btn-light {
+  margin-right: 30px;
+  background-color: #f2dcc9;
+  color: $dark-color;
 }
 
 .modal {
@@ -20,9 +26,26 @@
   left: 0;
   background-color: rgba($white-color, 0.5);
   display: none;
-  // display: flex;
-
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .inputBox {
+    padding: 5px;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+  }
   .alert-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1,
+    p {
+      color: white;
+    }
     width: 600px;
     height: 350px;
     background-color: $dark-color;
