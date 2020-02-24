@@ -27,29 +27,63 @@
   background-color: rgba($white-color, 0.5);
   display: none;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   .inputBox {
     padding: 5px;
     width: 300px;
     height: 30px;
     font-size: 20px;
   }
+
+  .click-box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($white-color, 0.5);
+  }
+  .closeX {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    color: $dark-color;
+  }
+
   .alert-box {
+    position: relative;
+    z-index: 99;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     h1,
     p {
       color: white;
     }
     width: 600px;
     height: 350px;
-    background-color: $dark-color;
     margin: auto;
+    background-color: $dark-color;
     border-radius: 10px;
+    font-size: 15px;
+
+    .inputBox {
+      padding: 5px;
+      width: 175px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+
+    #list {
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
   }
+}
+
+#editor-container {
+  height: 375px;
 }
