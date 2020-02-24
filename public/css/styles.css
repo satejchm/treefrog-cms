@@ -87,8 +87,9 @@ p {
       border-radius: 5px;
       font-size: 18px; }
 
-#editor-container {
-  height: 375px; }
+#editor-container,
+.editor {
+  min-height: 150px; }
 
 .nav {
   position: fixed;
@@ -135,5 +136,7 @@ p {
   color: #393c40;
   padding: 110px 30px 30px 30px; }
   .content-wrapper .text-wrapper {
-    width: 60%;
+    width: 100%;
     margin-bottom: 40px; }
+    .content-wrapper .text-wrapper p {
+      width: 60%; }

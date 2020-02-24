@@ -84,6 +84,8 @@
   }
 }
 
-#editor-container {
-  height: 375px;
+#editor-container,
+.editor {
+  min-height: 150px;
+  //display: none;
 }

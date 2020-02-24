@@ -33,6 +33,7 @@ function addGetStartedListener() {
     $(".get-started").off();
   });
 }
+
 function createMainNav() {
   //when you click on create main nav it opens modal
   $(".main-nav").click(function(e) {
@@ -68,12 +69,17 @@ function createSubNav() {
 }
 
 function validateInput() {
+  names = ["home", "about", "blah"];
   //if input box is empty or has no value return an error alert
   if ($(".inputBox").val() === "" || $("#inputBox").val() === null) {
-    swal("Please enter navigation name.");
+    swal("The name was left empty. Please enter navigation name.");
     return false;
   }
-  if ($(".inputBox").val() === "home" || $("#inputBox").val() === "about") {
+  if (
+    $(".inputBox").val() === names[0] ||
+    $(".inputBox").val() === names[1] ||
+    $(".inputBox").val() === names[2]
+  ) {
     swal(
       "You have already created a navigation with this name. Please create a new navigation name."
     );
@@ -95,8 +101,41 @@ function validateInput() {
     );
     $(".modal").css("display", "none");
     $(".text-wrapper").html(TREEFROG_SERVICE.getMainNavCreateContent());
+    addQuill();
     $(".btn-holder").html(TREEFROG_SERVICE.getSavePageInfoButton());
   }
+}
+
+function addQuill() {
+  var container = $(".editor").get(0);
+  $(".editor").css("width", "100wv");
+  var editor = new Quill(container);
+
+  var quill = new Quill("#editor-container", {
+    modules: {
+      toolbar: [
+        ["bold", "italic", "underline", "strike"], // toggled buttons
+        ["blockquote", "code-block"],
+
+        [{ header: 1 }, { header: 2 }], // custom button values
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ script: "sub" }, { script: "super" }], // superscript/subscript
+        [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+        [{ direction: "rtl" }], // text direction
+
+        [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+        [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+        [{ font: [] }],
+        [{ align: [] }],
+
+        ["clean"] // remove formatting button
+      ]
+    },
+    placeholder: "Compose an epic...",
+    theme: "snow" // or 'bubble'
+  });
 }
 
 $(document).ready(function() {
