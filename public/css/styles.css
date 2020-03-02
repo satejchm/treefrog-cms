@@ -151,10 +151,8 @@ p {
   #quillContent h5,
   #quillContent h6 {
     text-align: center; }
-  #quillContent li,
-  #quillContent ul,
-  #quillContent ol {
-    margin-left: 35px; }
+  #quillContent li {
+    margin-left: 60px; }
   #quillContent blockquote {
     margin-left: 50px; }
 
