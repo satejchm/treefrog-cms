@@ -1,0 +1,113 @@
+#quillContent {
+  margin-left: 35px;
+  margin-top: 20px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+
+  li,
+  ul,
+  ol {
+    margin-left: 35px;
+  }
+
+  blockquote {
+    margin-left: 50px;
+  }
+}
+
+.ql-align-content {
+  text-align: center;
+}
+
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-left {
+  text-align: left;
+}
+
+.ql-cursor {
+  text-align: center;
+  font-weight: bold;
+}
+
+.ql-syntax {
+  border-radius: 5px;
+  padding: 8px;
+  width: 75%;
+  min-height: 10px;
+  background-color: rgb(35, 36, 31);
+  color: white;
+}
+
+.ql-indent-1 {
+  margin-left: 50px;
+}
+
+.ql-indent-2 {
+  margin-left: 100px;
+}
+
+.ql-indent-3 {
+  margin-left: 150px;
+}
+
+.ql-indent-4 {
+  margin-left: 200px;
+}
+
+.ql-indent-5 {
+  margin-left: 250px;
+}
+
+.ql-indent-6 {
+  margin-left: 300px;
+}
+
+.ql-indent-7 {
+  margin-left: 350px;
+}
+
+.ql-indent-8 {
+  margin-left: 400px;
+}
+
+.ql-indent-9 {
+  margin-left: 450px;
+}
+
+.ql-direction-rtl {
+  margin-right: 45%;
+}
+
+.ql-size-small {
+  font-size: 75%;
+}
+
+.ql-size-large {
+  font-size: 135%;
+}
+
+.ql-size-huge {
+  font-size: 200%;
+}
+
+.ql-font-serif {
+  font-family: serif;
+}
+
+.ql-font-monospace {
+  font-family: monospace;
+}

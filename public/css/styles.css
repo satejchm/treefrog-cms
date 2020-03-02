@@ -140,3 +140,89 @@ p {
     margin-bottom: 40px; }
     .content-wrapper .text-wrapper p {
       width: 60%; }
+
+#quillContent {
+  margin-left: 35px;
+  margin-top: 20px; }
+  #quillContent h1,
+  #quillContent h2,
+  #quillContent h3,
+  #quillContent h4,
+  #quillContent h5,
+  #quillContent h6 {
+    text-align: center; }
+  #quillContent li,
+  #quillContent ul,
+  #quillContent ol {
+    margin-left: 35px; }
+  #quillContent blockquote {
+    margin-left: 50px; }
+
+.ql-align-content {
+  text-align: center; }
+
+.ql-align-center {
+  text-align: center; }
+
+.ql-align-right {
+  text-align: right; }
+
+.ql-align-left {
+  text-align: left; }
+
+.ql-cursor {
+  text-align: center;
+  font-weight: bold; }
+
+.ql-syntax {
+  border-radius: 5px;
+  padding: 8px;
+  width: 75%;
+  min-height: 10px;
+  background-color: #23241f;
+  color: white; }
+
+.ql-indent-1 {
+  margin-left: 50px; }
+
+.ql-indent-2 {
+  margin-left: 100px; }
+
+.ql-indent-3 {
+  margin-left: 150px; }
+
+.ql-indent-4 {
+  margin-left: 200px; }
+
+.ql-indent-5 {
+  margin-left: 250px; }
+
+.ql-indent-6 {
+  margin-left: 300px; }
+
+.ql-indent-7 {
+  margin-left: 350px; }
+
+.ql-indent-8 {
+  margin-left: 400px; }
+
+.ql-indent-9 {
+  margin-left: 450px; }
+
+.ql-direction-rtl {
+  margin-right: 45%; }
+
+.ql-size-small {
+  font-size: 75%; }
+
+.ql-size-large {
+  font-size: 135%; }
+
+.ql-size-huge {
+  font-size: 200%; }
+
+.ql-font-serif {
+  font-family: serif; }
+
+.ql-font-monospace {
+  font-family: monospace; }

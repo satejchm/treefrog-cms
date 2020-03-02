@@ -71,21 +71,16 @@ var TREEFROG_SERVICE = (function() {
   };
 
   var _getMainNavCreateContent = function() {
-    let contentStr = `<h1>Treefrog CMS</h1><p>Now you have your navigation set now you can create your content. Below you will see your navigation name and a text editor. Create your content in the text editor and then click on "Save Page Info". Once you have done that click on "PREVIEW SITE" to see what your web page looks like.</p>
-    <div id="editor-container" class="editor"></div>`;
+    let contentStr = `<h1>Treefrog CMS</h1><p>Now you have your navigation set now you can create your content. Below you will see your navigation name and a text editor. Create your content in the text editor and then click on "Save Page Info". Once you have done that click on "PREVIEW SITE" to see what your web page looks like.</p><h2 class="inputBoxName"></h2><div id="editor-container"></div>
+    </div>`;
 
     return contentStr;
   };
 
   var _getSavePageInfoButton = function() {
-    let savePage = `<span class="btn btn-dark sub-page">Save Page Info</span>`;
+    let savePage = `<div class="holder"><span class="btn btn-dark sub-page save-data">Save Page Info</span></div>`;
 
     return savePage;
-  };
-
-  var _getQuillContent = function() {
-    let quillContent = `<div id="editor-container"></div>`;
-    return quillContent;
   };
 
   return {
@@ -96,7 +91,6 @@ var TREEFROG_SERVICE = (function() {
     getModalContent: _getModalContent,
     getModalContentSub: _getModalContentSub,
     getMainNavCreateContent: _getMainNavCreateContent,
-    getSavePageInfoButton: _getSavePageInfoButton,
-    getQuillContent: _getQuillContent
+    getSavePageInfoButton: _getSavePageInfoButton
   };
 })();

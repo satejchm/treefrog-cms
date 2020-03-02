@@ -4,6 +4,7 @@ function initButtons() {
   createSubNav();
   createHomeContent();
   validateInput();
+  saveQuillInfo();
 }
 
 function createHomeContent() {
@@ -69,16 +70,15 @@ function createSubNav() {
 }
 
 function validateInput() {
-  names = ["home", "about", "blah"];
   //if input box is empty or has no value return an error alert
-  if ($(".inputBox").val() === "" || $("#inputBox").val() === null) {
+  if ($(".inputBox").val() === "" || $(".inputBox").val() === null) {
     swal("The name was left empty. Please enter navigation name.");
     return false;
   }
   if (
-    $(".inputBox").val() === names[0] ||
-    $(".inputBox").val() === names[1] ||
-    $(".inputBox").val() === names[2]
+    $(".inputBox").val() == "home" ||
+    $(".inputBox").val() == "about" ||
+    $(".inputBox").val() == "blah"
   ) {
     swal(
       "You have already created a navigation with this name. Please create a new navigation name."
@@ -100,22 +100,49 @@ function validateInput() {
         .toLowerCase()
     );
     $(".modal").css("display", "none");
+
     $(".text-wrapper").html(TREEFROG_SERVICE.getMainNavCreateContent());
+    $(".inputBoxName").html("nav < " + $(".inputBox").val());
     addQuill();
     $(".btn-holder").html(TREEFROG_SERVICE.getSavePageInfoButton());
+    saveQuillInfo();
   }
 }
 
-function addQuill() {
-  var container = $(".editor").get(0);
-  $(".editor").css("width", "100wv");
-  var editor = new Quill(container);
+function checkForDup() {
+  let newNavName = $(".inputBox")
+    .val()
+    .toLowerCase();
 
-  var quill = new Quill("#editor-container", {
+  if (newNaveName == "" || newNaveName == " ") {
+    alert("inside if", newNaveName);
+  } else {
+    let isUnique = true;
+  }
+
+  $.each(fakeList, function(idx, val) {
+    if (val.navName == newNavName) {
+      alert("same", val.navname);
+      return false;
+    }
+  });
+
+  if (isUnique) {
+    fakeList.push({ navName: newNaveName });
+    $(".inputBox").val("");
+    closeModal();
+  }
+}
+
+var quill;
+var justHtml;
+
+function addQuill() {
+  quill = new Quill("#editor-container", {
     modules: {
       toolbar: [
         ["bold", "italic", "underline", "strike"], // toggled buttons
-        ["blockquote", "code-block"],
+        ["blockquote", "code-block", "image", "link"],
 
         [{ header: 1 }, { header: 2 }], // custom button values
         [{ list: "ordered" }, { list: "bullet" }],
@@ -135,6 +162,18 @@ function addQuill() {
     },
     placeholder: "Compose an epic...",
     theme: "snow" // or 'bubble'
+  });
+}
+
+function saveQuillInfo() {
+  $(".save-data").click(function(e) {
+    console.log("clicked");
+    e.preventDefault();
+    justHtml = quill.root.innerHTML;
+    $("#quillContent").html(justHtml);
+    //setPages(justHtml);
+    //$(".content-wrapper").css("display", "block");
+    //$(".pageData").html(justHtml);
   });
 }
 
