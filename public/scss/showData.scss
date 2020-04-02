@@ -1,6 +1,73 @@
-.showData {
+#bodyInfo {
+  min-height: 100%;
+  min-width: 100%;
   display: flex;
-  width: 80%;
-  justify-content: space-between;
-  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  font-family: $rale;
+
+  #dataInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+    width: 80%;
+    background-color: $l-blue;
+    padding: 10px;
+    border-radius: 20px;
+
+    h1 {
+      color: white;
+      size: 400%;
+      margin-bottom: 35px;
+      background-color: $blue;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    input,
+    button {
+      font-size: 110%;
+      text-align: center;
+      justify-content: center;
+      width: 200px;
+      height: 30px;
+      border-radius: 10px;
+      margin: 5px;
+      border-width: 0.5px;
+      font-family: $rale;
+    }
+
+    button {
+      font-family: $rale;
+      background-color: $blue;
+      color: white;
+    }
+
+    .infoDataDiv {
+      margin-bottom: 25px;
+      flex-direction: row;
+    }
+
+    .showData {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      background-color: $blue;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        min-height: 30px;
+        min-width: 80%;
+        justify-content: space-around;
+      }
+    }
+  }
 }

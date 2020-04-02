@@ -12,7 +12,7 @@ var PRACTICE_SERVICE = (function() {
   };
 
   var _updateData = function(id, newContent, callback) {
-    //create var that references nav name from firebase and update to new contact
+    //create var that references nav name from firebase and delete the newContent
     var newObj = { navName: newContent };
 
     _db

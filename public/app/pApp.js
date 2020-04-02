@@ -22,7 +22,9 @@ function displayData(addData) {
   //close container nav information
   container += "</nav>";
   //add container string to html to display nav info
-  $(".showData").html(container);
+  $(".showData")
+    .html(container)
+    .css("display", "flex");
   addNavListener();
 }
 
@@ -45,7 +47,7 @@ function init() {
       PRACTICE_SERVICE.checkPages(nName, alertUser);
       $("#nav-input").val("");
     } else {
-      alert("add name");
+      swal("add name");
     }
     console.log("add name");
   });
@@ -59,7 +61,7 @@ function init() {
 }
 
 function alertUser(result) {
-  alert(result);
+  swal(result);
 }
 
 $(document).ready(function() {

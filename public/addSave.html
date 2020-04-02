@@ -4,24 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add and Save</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <input id="nav-input" type="text" />
-    <button id="addData">Add Data</button>
-    <button class="deleteData">Delete Data</button>
+    <div id="bodyInfo">
+      <div id="dataInfo">
+        <h1>Create and Edit your Navigation!</h1>
+        <div class="infoDataDiv">
+          <input id="nav-input" type="text" />
+          <button id="addData">Add Data</button>
+        </div>
 
-    <p>Get Data</p>
-    <button class="getData">Get Data</button>
-    <div class="showData"></div>
+        <div class="infoDataDiv">
+          To get navigation information click the Get Data button:
+          <button class="getData">Get Data</button>
+        </div>
 
-    <div>
-      <p>
-        To update nav, enter new nav name then click on the navigation name you
-        would like to update:
-      </p>
-      <input type="text" id="updateContent" />
+        <div class="showData"></div>
+
+        <div class="infoDataDiv">
+          To update nav, enter new nav name then click on the navigation name
+          you would like to update:
+
+          <input type="text" id="updateContent" />
+        </div>
+
+        <div class="infoDataDiv"></div>
+      </div>
     </div>
-
     <script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
