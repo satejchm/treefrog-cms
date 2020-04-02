@@ -257,7 +257,7 @@ p {
       background-color: #6e6efc;
       color: white; }
     #bodyInfo #dataInfo .infoDataDiv {
-      margin-bottom: 25px;
+      margin: 0px 60px 25px 60px;
       flex-direction: row; }
     #bodyInfo #dataInfo .showData {
       display: none;
