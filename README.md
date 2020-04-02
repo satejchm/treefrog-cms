@@ -1,3 +1,8 @@
+## Homework Assignments Web 4 Links/Information:
+Homework 5: 
+Homework 5 upload: added data to firebase and displays the data onto the page when you hit the get data button. Utilizes the firebase ID assigned to each item/navigation name. Styled the navigation tags. Also started on the update feature(more along lines of what homework 6 is about).
+
+
 # Treefrog CMS
 
 This is a CMS created with Firebase and jQuery. We are just showing how to create a very simple CMS that will update a site's navigation and update the page content.
