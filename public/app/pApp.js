@@ -16,7 +16,7 @@ function displayData(addData) {
   addData.forEach(function(doc) {
     var id = doc.id;
     var rawData = doc.data();
-    console.log(id + rawData.navName);
+    console.log(id + " " + rawData.navName);
     container += `<a href="#" id="${id}">${rawData.navName}</a>`;
   });
   //close container nav information
