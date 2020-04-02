@@ -45,3 +45,5 @@ You need to plan your application you are creating and if you are going to inclu
 11. Deploy to Firebase:
 
 <pre><code>firebase deploy --except functions</code></pre>
+
+Homework 5 upload: added data to firebase and displays the data onto the page when you hit the get data button. Utilizes the firebase ID assigned to each item/navigation name. Styled the navigation tags. Also started on the update feature(more along lines of what homework 6 is about).
