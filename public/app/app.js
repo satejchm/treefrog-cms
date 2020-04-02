@@ -1,3 +1,20 @@
+function addMainNav(navName) {
+  console.log(navName);
+
+  let pageFakeData = {
+    navName: navName,
+    content: "<h1>Sarah how'd ya get so dumb haha</h1>",
+    subNavs: [
+      {
+        navName: "subNav",
+        content: "<h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>"
+      }
+    ]
+  };
+
+  TREEFROG_SERVICE.saveData(pageFakeData);
+}
+
 function initButtons() {
   addGetStartedListener();
   createMainNav();
@@ -70,6 +87,14 @@ function createSubNav() {
 }
 
 function validateInput() {
+  let newNavName = $(".inputBox")
+    .val()
+    .toLowerCase()
+    .trim();
+
+  TREEFROG_SERVICE.checkMainNavName(newNavName, addMainNav);
+
+  /*
   //if input box is empty or has no value return an error alert
   if ($(".inputBox").val() === "" || $(".inputBox").val() === null) {
     swal("The name was left empty. Please enter navigation name.");
@@ -100,37 +125,41 @@ function validateInput() {
         .toLowerCase()
     );
     $(".modal").css("display", "none");
-
-    $(".text-wrapper").html(TREEFROG_SERVICE.getMainNavCreateContent());
-    $(".inputBoxName").html("nav < " + $(".inputBox").val());
-    addQuill();
-    $(".btn-holder").html(TREEFROG_SERVICE.getSavePageInfoButton());
-    saveQuillInfo();
-  }
+ */
+  $(".text-wrapper").html(TREEFROG_SERVICE.getMainNavCreateContent());
+  $(".inputBoxName").html("nav < " + $(".inputBox").val());
+  addQuill();
+  $(".btn-holder").html(TREEFROG_SERVICE.getSavePageInfoButton());
+  saveQuillInfo();
 }
 
 function checkForDup() {
+  /*let fakeList = [
+    { navName: "home" },
+    { navName: "about" },
+    { navname: "contact" }
+  ];*/
   let newNavName = $(".inputBox")
     .val()
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
 
-  if (newNaveName == "" || newNaveName == " ") {
+  if (!newNaveName) {
     alert("inside if", newNaveName);
   } else {
     let isUnique = true;
-  }
 
-  $.each(fakeList, function(idx, val) {
-    if (val.navName == newNavName) {
-      alert("same", val.navname);
-      return false;
+    $.each(fakeList, function(idx, val) {
+      if (val.navName == newNavName) {
+        alert("same", val.navname);
+        return false;
+      }
+    });
+    if (isUnique) {
+      fakeList.push({ navName: newNaveName });
+      $(".inputBox").val("");
+      closeModal();
     }
-  });
-
-  if (isUnique) {
-    fakeList.push({ navName: newNaveName });
-    $(".inputBox").val("");
-    closeModal();
   }
 }
 
@@ -178,6 +207,7 @@ function saveQuillInfo() {
 }
 
 $(document).ready(function() {
+  TREEFROG_SERVICE.initFirebase();
   initButtons();
   addGetStartedListener();
 });

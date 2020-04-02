@@ -1,4 +1,75 @@
 var TREEFROG_SERVICE = (function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    try {
+      let app = firebase.app();
+      let features = ["auth", "database", "messaging", "storage"].filter(
+        feature => typeof app[feature] === "function"
+      );
+      document.getElementById("load");
+    } catch (e) {
+      console.error(e);
+    }
+  });
+
+  var _db;
+
+  //initialize firebase connection
+  var _initFirebase = function() {
+    firebase
+      .auth()
+      .signInAnonymously()
+      .then(function(result) {
+        console.log("connected");
+        _db = firebase.firestore();
+      });
+  };
+
+  var _addContact = function() {
+    let data = { fName: "Sarah", lName: "Tejchma" };
+    _db
+      .collection("contacts")
+      .add(data)
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        _saveData();
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+  };
+
+  //goes to firebase and checks for info if it doesn't have it it creates it, if it does it fetches it
+  var _saveData = function(pageData) {
+    _db
+      .collection("Pages")
+      .add(pageData)
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+  };
+
+  var _checkMainNavName = function(mainNavName, callback) {
+    var pages = _db.collection("Pages");
+
+    pages
+      .get()
+      .then(function(querySnapshot) {
+        console.log("got something ", querySnapshot.empty);
+        if (querySnapshot.empty) {
+          callback(mainNavName);
+        } else {
+          let query = pages.where("navName", "==", "home");
+          console.log("not empty ", query);
+        }
+      })
+      .catch(function(error) {
+        console.log("error", error);
+      });
+  };
+
   var _getGetStartedContent = function() {
     let contentStr = `<h1>Treefrog CMS</h1><p>This is the screen where you will create your navigation and page content.</p><p>First, you will need to create a main navigation. Once you have created a main navigation you can create a sub-navigation if you would like to.</p><p>Once you create either a nav or sub-nav a text editor will pop up and you will be allowed to create your page content.</p>`;
 
@@ -91,6 +162,10 @@ var TREEFROG_SERVICE = (function() {
     getModalContent: _getModalContent,
     getModalContentSub: _getModalContentSub,
     getMainNavCreateContent: _getMainNavCreateContent,
-    getSavePageInfoButton: _getSavePageInfoButton
+    getSavePageInfoButton: _getSavePageInfoButton,
+    initFirebase: _initFirebase,
+    saveData: _saveData,
+    addContact: _addContact,
+    checkMainNavName: _checkMainNavName
   };
 })();

@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TShelton41/treefrog-cms.git"
+    "url": "git+https://github.com/TShelton41/treefrog-cms.git",
+    "firebase-serve": "firebase serve --only hosting"
   },
   "author": "Todd Shelton",
   "license": "ISC",
