@@ -1,6 +1,6 @@
 function addNavListener() {
   //when you click on the nav anchor it will update to what was entered in the update input
-  $("nav a").click(function(e) {
+  $("nav a").click(function (e) {
     //get firebase id
     var id = e.currentTarget.id;
     var newNavName = $("#updateContent").val();
@@ -11,10 +11,11 @@ function addNavListener() {
   $("#updateContent").val("");
 }
 function deleteNavListener() {
-  //when you click on the nav anchor it will update to what was entered in the update input
-  $("#deleteData").click(function(e) {
+  //when you click on the nav anchor it will delete the nav a you select after you click the button
+  $("#deleteData").click(function (e) {
     //get firebase id
     var id = e.currentTarget.id;
+    up;
     var newNavName = $("nav a").val();
 
     //reference database and return back
@@ -25,7 +26,7 @@ function deleteNavListener() {
 function displayData(addData) {
   //start navigation using a string
   var container = "<nav> ";
-  addData.forEach(function(doc) {
+  addData.forEach(function (doc) {
     var id = doc.id;
     var rawData = doc.data();
     console.log(id + " " + rawData.navName);
@@ -34,25 +35,20 @@ function displayData(addData) {
   //close container nav information
   container += "</nav>";
   //add container string to html to display nav info
-  $(".showData")
-    .html(container)
-    .css("display", "flex");
+  $(".showData").html(container).css("display", "flex");
   addNavListener();
 }
 
 function init() {
-  $(".getData").click(function(e) {
+  $(".getData").click(function (e) {
     PRACTICE_SERVICE.getAllData(displayData);
   });
 
-  $("#addData").click(function(e) {
+  $("#addData").click(function (e) {
     e.preventDefault();
     //get info from input box
     //lowercase the data
-    let nName = $("#nav-input")
-      .val()
-      .trim()
-      .toLowerCase();
+    let nName = $("#nav-input").val().trim().toLowerCase();
 
     if (nName != "") {
       console.log("not empty");
@@ -76,7 +72,7 @@ function alertUser(result) {
   swal(result);
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   PRACTICE_SERVICE.initFirebase(init);
   //init();
 });
