@@ -8,8 +8,20 @@ function addNavListener() {
     //reference database and return back
     PRACTICE_SERVICE.updateContent(id, newNavName, displayData);
   });
+  $("#updateContent").val("");
 }
+function deleteNavListener() {
+  //when you click on the nav anchor it will update to what was entered in the update input
+  $("#deleteData").click(function(e) {
+    //get firebase id
+    var id = e.currentTarget.id;
+    var newNavName = $("nav a").val();
 
+    //reference database and return back
+    PRACTICE_SERVICE.updateContent(id, newNavName, displayData);
+  });
+  $("#updateContent").val("");
+}
 function displayData(addData) {
   //start navigation using a string
   var container = "<nav> ";

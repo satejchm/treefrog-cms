@@ -12,13 +12,26 @@ var PRACTICE_SERVICE = (function() {
   };
 
   var _updateData = function(id, newContent, callback) {
-    //create var that references nav name from firebase and delete the newContent
+    //create var that references nav name from firebase and update the newContent
     var newObj = { navName: newContent };
 
     _db
       .collection("Pages")
       .doc(id)
       .update(newObj)
+      .then(function() {
+        _getAllData(callback);
+      });
+  };
+
+  var _deleteData = function(id, newContent, callback) {
+    //create var that references nav name from firebase and update the newContent
+    var newObj = { navName: newContent };
+
+    _db
+      .collection("Pages")
+      .doc(id)
+      .delete()
       .then(function() {
         _getAllData(callback);
       });
@@ -82,6 +95,7 @@ var PRACTICE_SERVICE = (function() {
     initFirebase: _initFirebase,
     checkPages: _checkPages,
     getAllData: _getAllData,
-    updateContent: _updateData
+    updateContent: _updateData,
+    deleteContent: _deleteData
   };
 })();
