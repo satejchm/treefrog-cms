@@ -5,6 +5,11 @@ Homework 5 Web 4 Treefrog page: https://in-info-web4.informatics.iupui.edu/~sate
 
 Homework 5 upload: added data to firebase and displays the data onto the page when you hit the get data button. Utilizes the firebase ID assigned to each item/navigation name. Styled the navigation tags. Also started on the update feature(more along lines of what homework 6 is about).
 
+Homework 6 Web 4 Treefrog index: https://in-info-web4.informatics.iupui.edu/~satejchm/treefrog-cms/
+
+Homework 6 Web 4 Treefrog page: https://in-info-web4.informatics.iupui.edu/~satejchm/treefrog-cms/public/addSave.html
+
+Homework 6 upload: Be able to update nav data that is in firebase by using an input and clicking the nav. You also need to be able to delete an item, I chose to so using a button you click then click the navigation that you want to delete and it deletes that information from firebase.
 
 ## Treefrog CMS
 
