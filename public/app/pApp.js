@@ -10,18 +10,18 @@ function addNavListener() {
   });
   $("#updateContent").val("");
 }
+
 function deleteNavListener() {
   //when you click on the nav anchor it will delete the nav a you select after you click the button
   $("#deleteData").click(function (e) {
     //get firebase id
     var id = e.currentTarget.id;
-    up;
     var newNavName = $("nav a").val();
 
     //reference database and return back
-    PRACTICE_SERVICE.updateContent(id, newNavName, displayData);
+    PRACTICE_SERVICE.deleteContent(id, newNavName, displayData);
+    console.log("deleted");
   });
-  $("#updateContent").val("");
 }
 function displayData(addData) {
   //start navigation using a string
@@ -37,6 +37,7 @@ function displayData(addData) {
   //add container string to html to display nav info
   $(".showData").html(container).css("display", "flex");
   addNavListener();
+  deleteNavListener();
 }
 
 function init() {
