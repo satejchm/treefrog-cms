@@ -3,26 +3,29 @@ function addNavListener() {
   $("nav a").click(function (e) {
     //get firebase id
     var id = e.currentTarget.id;
+    //reference the input for the name change
     var newNavName = $("#updateContent").val();
 
     //reference database and return back
     PRACTICE_SERVICE.updateContent(id, newNavName, displayData);
+    console.log("updated");
   });
   $("#updateContent").val("");
 }
 
 function deleteNavListener() {
-  //when you click on the nav anchor it will delete the nav a you select after you click the button
+  //when you click on delete button it will delete the selected nav name data from the database using the id
   $("#deleteData").click(function (e) {
-    //get firebase id
-    var id = e.currentTarget.id;
-    var newNavName = $("nav a").val();
-
-    //reference database and return back
-    PRACTICE_SERVICE.deleteContent(id, newNavName, displayData);
     console.log("deleted");
+    //references the nav data id
+    $("nav a").click(function (e) {
+      var id = e.currentTarget.id;
+
+      PRACTICE_SERVICE.deleteContent(id, displayData);
+    });
   });
 }
+
 function displayData(addData) {
   //start navigation using a string
   var container = "<nav> ";
@@ -37,13 +40,14 @@ function displayData(addData) {
   //add container string to html to display nav info
   $(".showData").html(container).css("display", "flex");
   addNavListener();
-  deleteNavListener();
 }
 
 function init() {
   $(".getData").click(function (e) {
     PRACTICE_SERVICE.getAllData(displayData);
   });
+
+  deleteNavListener();
 
   $("#addData").click(function (e) {
     e.preventDefault();
