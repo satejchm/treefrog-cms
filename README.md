@@ -1,4 +1,4 @@
-# Homework Assignments Web 4 Links/Information:
+# Homework Assignments Firebase Links/Information:
 Homework 5 & 6 upload to firebase: https://treefrog-cms-tejchma.firebaseapp.com/addSave.html
 
 Both homework assignments are on the same project link included above. Project information for each homework included below.
